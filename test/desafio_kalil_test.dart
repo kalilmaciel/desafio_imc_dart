@@ -27,7 +27,7 @@ void main() {
       {'nome': '', 'peso': 35, 'altura': 130},
     };
 
-    valores.forEach((valor) {
+    for (var valor in valores) {
       test('IMC', () {
         Pessoa pessoa = Pessoa(
             nome: valor['nome'].toString(),
@@ -36,6 +36,6 @@ void main() {
         expect(
             () => calcularIMC(pessoa), throwsA(TypeMatcher<ArgumentError>()));
       });
-    });
+    }
   });
 }
